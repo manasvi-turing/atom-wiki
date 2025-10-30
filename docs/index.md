@@ -1,12 +1,12 @@
-"""
-title: Markdown to HTML Wiki Generator
+---
+title: Atom Wiki
 author: Documentation Team
 tags: [documentation, markdown, wiki, static-site]
 version: 1.0
 description: Transform your markdown files into a beautiful, shareable single-page wiki
-"""
+---
 
-# Markdown to HTML Wiki Generator
+# Atom Wiki
 
 **The simplest way to share your knowledge.**
 
@@ -25,9 +25,9 @@ A powerful tool that converts a folder of markdown files into a **single, beauti
 Stop fighting with complex documentation tools. **Just write markdown** and get:
 
 ✅ **One file to share** - No deployment needed  
-✅ **Works offline** - Share via email, USB, or cloud  
+✅ **Works offline** - Share via email, USB, or cloud (needs internet first load for fonts)  
 ✅ **GitHub Pages ready** - Instant documentation site  
-✅ **Zero dependencies** - Pure HTML/CSS/JS output  
+✅ **Minimal dependencies** - Just fonts/icons from CDN (cached after first load)  
 ✅ **Beautiful by default** - Professional appearance  
 
 ## Quick Example

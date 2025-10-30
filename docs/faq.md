@@ -1,6 +1,6 @@
-"""
+---
 tags: [faq, help, troubleshooting]
-"""
+---
 
 # Frequently Asked Questions
 
@@ -40,14 +40,17 @@ Tool handles everything else.
 
 ### Is it really just one file?
 
-**Yes!** Everything embedded:
-- CSS styles
-- JavaScript
-- Navigation
-- Content
-- Icons (Material Symbols CDN)
+**Yes!** One HTML file with:
+- ✅ All your content (fully embedded)
+- ✅ All CSS styles (fully embedded)
+- ✅ All JavaScript (fully embedded)
+- ✅ Navigation logic (fully embedded)
+- ⚠️ Fonts & icons (from CDN, cached after first load)
+- ⚠️ Syntax highlighting (from CDN, cached after first load)
 
-Result: 100-500KB typical size.
+Result: ~200KB typical size (your content + embedded code)
+
+**Note:** We're working on fully embedded mode (no CDNs) - coming soon!
 
 ---
 
@@ -124,11 +127,22 @@ Typical wiki: 20-50 files = 100-300KB
 
 ### Does it work offline?
 
-**Yes!** Completely offline except:
-- Google Fonts (Material Icons)
-- Prism.js CDN
+**Mostly!** Here's the reality:
 
-Both have fallbacks if offline.
+✅ **Works offline:**
+- All your content
+- Navigation & TOC
+- Theme switching
+- Everything except fonts/icons/syntax highlighting
+
+⚠️ **Needs internet on first load:**
+- Google Fonts (cached by browser after first load)
+- Material Icons (cached by browser after first load)
+- Prism.js for code syntax highlighting (cached by browser)
+
+**After first load:** Everything is cached, works offline!
+
+**Future:** We're building fully embedded mode with zero CDN dependencies.
 
 ### Can I host on GitHub Pages?
 
@@ -258,29 +272,47 @@ docs/
 
 ## Comparison
 
-### vs. Notion
-- ✅ Offline
-- ✅ Version control
-- ✅ No subscription
-- ❌ No database features
+| Feature | Atom Wiki | Notion | Confluence | MkDocs | Google Docs |
+|---------|-----------|--------|------------|---------|-------------|
+| **Cost** | Free | $8-15/user/mo | $5-10/user/mo | Free | Free |
+| **Offline** | ⚠️ Mostly* | ❌ No | ❌ No | ❌ Needs server | ⚠️ Limited |
+| **One File** | ✅ Yes | ❌ No | ❌ No | ❌ No | ❌ No |
+| **Version Control** | ✅ Git | ⚠️ History | ⚠️ Limited | ✅ Git | ⚠️ History |
+| **Setup Time** | < 1 min | 10-30 min | 30+ min | 10-30 min | < 1 min |
+| **Hosting** | ❌ Not needed | ☁️ Cloud only | ☁️ Cloud/Self | 🖥️ Required | ☁️ Cloud only |
+| **Sharing** | USB/Email/File | 🔗 Link only | 🔗 Link only | 🔗 Link only | 🔗 Link only |
+| **Real-time Collab** | ❌ No | ✅ Yes | ✅ Yes | ❌ No | ✅ Yes |
+| **Database Features** | ❌ No | ✅ Yes | ✅ Yes | ❌ No | ⚠️ Limited |
+| **Markdown** | ✅ Native | ⚠️ Export only | ⚠️ Limited | ✅ Native | ❌ No |
+| **Beautiful Output** | ✅ Yes | ✅ Yes | ⚠️ OK | ✅ Yes | ⚠️ OK |
+| **Vendor Lock-in** | ❌ None | ⚠️ High | ⚠️ High | ❌ None | ⚠️ Medium |
 
-### vs. Confluence
-- ✅ Free
-- ✅ Simple
-- ✅ Fast
-- ❌ No user management
+\* *Needs internet on first load for fonts/icons (cached after). Working on fully embedded mode!*
 
-### vs. Word/Google Docs
-- ✅ Version control
-- ✅ Beautiful navigation
-- ✅ Searchable
-- ❌ No real-time collaboration
+### When to Choose What?
 
-### vs. MkDocs/Docusaurus
-- ✅ No hosting
-- ✅ Single file
-- ✅ Simple setup
-- ❌ Less extensible
+**Choose Atom Wiki if you want:**
+- 📁 Files you own forever
+- 📤 Share via USB/email/file servers
+- 🚀 Zero setup time
+- 💰 Zero cost
+- 🔧 Git-based workflow
+
+**Choose Notion/Confluence if you need:**
+- 👥 Real-time collaboration
+- 🗃️ Database features
+- 📊 Project management
+- 👤 User permissions
+
+**Choose MkDocs/Docusaurus if you need:**
+- 🔌 Extensive plugins
+- 🎨 Complete customization
+- 🌐 Public documentation sites
+
+**Choose Google Docs if you need:**
+- ✍️ Real-time co-editing
+- 💬 Comment threads
+- 📱 Mobile-first editing
 
 ---
 
@@ -288,7 +320,7 @@ docs/
 
 ### Where to report bugs?
 
-GitHub Issues: [Link to repo]
+GitHub Issues: https://github.com/manasvi-turing/atom-wiki/issues
 
 ### How to contribute?
 

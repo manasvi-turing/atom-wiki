@@ -1,6 +1,6 @@
-"""
+---
 tags: [workflows, productivity, tips]
-"""
+---
 
 # Workflows
 
@@ -198,9 +198,9 @@ research/
       └── ideas.md
 
 # Tag by topic
-"""
+---
 tags: [machine-learning, nlp, transformers]
-"""
+---
 
 # Build personal research wiki
 atom-wiki research -o research-notes.html
@@ -265,7 +265,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build wiki
         run: |
-          uvx --from git+https://github.com/repo/atom-wiki.git \
+          uvx --from git+https://github.com/manasvi-turing/atom-wiki.git \
             atom-wiki docs -o wiki.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -325,11 +325,11 @@ atom-wiki ideas -o brainstorm.html
 
 ### 1. Use Frontmatter
 ```markdown
-"""
+---
 tags: [important, urgent, review]
 author: Your Name
 date: 2024-01-15
-"""
+---
 ```
 
 ### 2. Link Liberally

@@ -1,11 +1,11 @@
-# Demo Showcase
+# Atom Wiki Documentation
 
-This folder contains **example markdown files** that demonstrate the value and use cases of the Markdown to HTML Wiki Generator tool.
+This folder contains the **complete documentation** for Atom Wiki.
 
 ## What's Inside
 
-- **index.md** - Main introduction and value proposition
-- **use-cases.md** - 10 real-world scenarios and workflows
+- **index.md** - Overview and introduction
+- **use-cases.md** - Real-world scenarios and workflows
 - **quick-start.md** - Step-by-step getting started guide
 - **features.md** - Complete feature list
 - **workflows.md** - Productivity workflows and tips
@@ -14,11 +14,11 @@ This folder contains **example markdown files** that demonstrate the value and u
 ## Try It Yourself
 
 ```bash
-# Generate the demo wiki
-atom-wiki demo_showcase -o demo.html
+# Generate this documentation as a wiki
+atom-wiki docs -o atom-wiki-docs.html
 
 # Open in browser
-open demo.html
+open atom-wiki-docs.html
 ```
 
 ## Purpose

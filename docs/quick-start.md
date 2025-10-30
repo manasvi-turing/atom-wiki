@@ -1,6 +1,6 @@
-"""
+---
 tags: [getting-started, tutorial, guide]
-"""
+---
 
 # Quick Start
 
@@ -10,10 +10,10 @@ Get your first wiki up and running in **2 minutes**.
 
 ```bash
 # Using uvx (recommended)
-uvx --from "git+https://github.com/YOUR-REPO/atom-wiki.git" atom-wiki
+uvx --from "git+https://github.com/manasvi-turing/atom-wiki.git" atom-wiki
 
 # Or clone and install
-git clone https://github.com/YOUR-REPO/atom-wiki.git
+git clone https://github.com/manasvi-turing/atom-wiki.git
 cd atom-wiki
 uv pip install -e .
 ```
@@ -71,11 +71,11 @@ start wiki.html  # Windows
 Enhance any markdown file:
 
 ```markdown
-"""
+---
 title: My Page
 tags: [guide, tutorial, beginner]
 author: Your Name
-"""
+---
 
 # Content starts here
 ```

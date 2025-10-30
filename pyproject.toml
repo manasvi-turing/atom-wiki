@@ -16,6 +16,7 @@ dependencies = [
 [project.scripts]
 atom-wiki = "atomwiki:main"
 atomwiki = "atomwiki:main"
+aw = "atomwiki:main"
 
 [tool.setuptools]
 packages = ["atomwiki"]

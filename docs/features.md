@@ -1,6 +1,6 @@
-"""
+---
 tags: [features, capabilities, highlights]
-"""
+---
 
 # Features
 
@@ -101,11 +101,11 @@ tags: [features, capabilities, highlights]
 
 ## 🚀 Performance
 
-- **Single File** - No external dependencies
-- **Fast Loading** - Inline CSS/JS
+- **Single File** - All content & code embedded
+- **Fast Loading** - Inline CSS/JS (fonts/icons from CDN)
 - **Instant Navigation** - No page reloads
 - **Smooth Scrolling** - Hardware accelerated
-- **Small Size** - Typical wiki: 100-500KB
+- **Small Size** - Typical wiki: ~200KB
 
 ## 🔌 Optional AI Chat
 
@@ -125,16 +125,16 @@ tags: [features, capabilities, highlights]
 
 ## 📤 Export & Share
 
-- **Single HTML File** - Self-contained
+- **Single HTML File** - Self-contained (content + code)
 - **Email Attachment** - Share via email
 - **Cloud Storage** - Dropbox, Drive, etc.
 - **GitHub Pages** - Free hosting
-- **Offline Capable** - No server needed
+- **Mostly Offline** - Needs internet first load for fonts (cached after)
 
 ## 🔒 Privacy & Security
 
 - **No Tracking** - Zero analytics
-- **No External Calls** - Works offline
+- **Minimal External Calls** - Only fonts/icons CDN (working on fully embedded mode)
 - **No Cookies** - Privacy first
 - **Local Storage Only** - Theme preferences
 - **Open Source** - Inspect the code

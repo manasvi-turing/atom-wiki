@@ -98,34 +98,35 @@ class MarkdownToHTMLConverter:
             print(f"  - {rel_path}")
     
     def parse_frontmatter(self, content):
-        """Parse frontmatter from markdown content (works for all .md files)"""
+        """Parse YAML frontmatter from markdown content (works for all .md files)"""
         frontmatter = {}
         
-        # Check if content starts with """ (triple quotes)
-        if content.strip().startswith('"""'):
-            parts = content.split('"""', 2)
-            if len(parts) >= 2:
-                # Extract frontmatter section
-                fm_section = parts[1].strip()
-                # Extract the actual markdown content
-                markdown_content = parts[2].strip() if len(parts) > 2 else ""
+        # Check if content starts with --- (YAML frontmatter)
+        if content.strip().startswith('---'):
+            # Find the closing ---
+            lines = content.strip().split('\n')
+            if len(lines) > 1:
+                # Find the second --- that closes the frontmatter
+                end_index = None
+                for i in range(1, len(lines)):
+                    if lines[i].strip() == '---':
+                        end_index = i
+                        break
                 
-                # Parse frontmatter fields
-                for line in fm_section.split('\n'):
-                    if ':' in line:
-                        key, value = line.split(':', 1)
-                        key = key.strip()
-                        value = value.strip()
-                        
-                        # Parse tags as list
-                        if key == 'tags' and value.startswith('[') and value.endswith(']'):
-                            # Remove brackets and split by comma
-                            tags_str = value[1:-1]
-                            frontmatter['tags'] = [tag.strip() for tag in tags_str.split(',') if tag.strip()]
-                        else:
-                            frontmatter[key] = value
-                
-                return frontmatter, markdown_content
+                if end_index:
+                    # Extract frontmatter section (between the two ---)
+                    fm_section = '\n'.join(lines[1:end_index])
+                    # Extract the actual markdown content (after closing ---)
+                    markdown_content = '\n'.join(lines[end_index + 1:]).strip()
+                    
+                    # Parse YAML frontmatter
+                    try:
+                        frontmatter = yaml.safe_load(fm_section) or {}
+                    except yaml.YAMLError as e:
+                        print(f"Warning: Failed to parse frontmatter YAML: {e}")
+                        frontmatter = {}
+                    
+                    return frontmatter, markdown_content
         
         return {}, content
     
@@ -189,7 +190,7 @@ class MarkdownToHTMLConverter:
         extensions = [
             'extra',  # Includes fenced_code, tables, attr_list, and more
             'toc',
-            'nl2br'
+            # Note: nl2br removed - it interferes with nested list parsing
         ]
         
         md = markdown.Markdown(extensions=extensions)

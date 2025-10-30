@@ -1318,7 +1318,7 @@ code[class*="language-"] .token.tag {
 .section-content ul,
 .section-content ol {
     margin: 12px 0;
-    padding-left: 2em;
+    padding-left: 2.5em;
     list-style-position: outside;
     line-height: 1.8;
 }
@@ -1338,14 +1338,15 @@ code[class*="language-"] .token.tag {
 }
 
 .section-content li {
-    margin: 8px 0;
-    padding-left: 0.5em;
+    margin: 6px 0;
+    padding-left: 0.25em;
 }
 
-/* Nested lists - proper indentation */
+/* Nested lists - proper indentation and spacing */
 .section-content li > ul,
 .section-content li > ol {
-    margin: 8px 0;
+    margin-top: 6px;
+    margin-bottom: 6px;
     padding-left: 2em;
 }
 
@@ -1358,13 +1359,13 @@ code[class*="language-"] .token.tag {
     list-style-type: square;
 }
 
-/* Nested ordered lists - different numbering */
+/* Nested ordered lists - keep decimal numbering like in markdown */
 .section-content ol ol {
-    list-style-type: lower-alpha;
+    list-style-type: decimal;
 }
 
 .section-content ol ol ol {
-    list-style-type: lower-roman;
+    list-style-type: decimal;
 }
 
 /* Mixed nested lists */
@@ -1373,15 +1374,28 @@ code[class*="language-"] .token.tag {
     padding-left: 2em;
 }
 
+/* Paragraphs inside list items - normalize spacing for loose/tight lists */
 .section-content li > p {
-    margin: 4px 0;
+    margin: 0;
 }
 
-/* List item content spacing */
-.section-content li > ul,
-.section-content li > ol {
-    margin-top: 8px;
-    margin-bottom: 8px;
+.section-content li > p:first-child {
+    margin-top: 0;
+}
+
+.section-content li > p:last-child {
+    margin-bottom: 0;
+}
+
+/* Ensure nested lists have proper spacing */
+.section-content li > ul:first-child,
+.section-content li > ol:first-child {
+    margin-top: 4px;
+}
+
+.section-content li > ul:last-child,
+.section-content li > ol:last-child {
+    margin-bottom: 4px;
 }
 
 /* ===== TASK LIST STYLING ===== */
