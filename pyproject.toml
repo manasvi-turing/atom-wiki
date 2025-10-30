@@ -17,6 +17,7 @@ dependencies = [
 atom-wiki = "atomwiki:main"
 atomwiki = "atomwiki:main"
 aw = "atomwiki:main"
+aw-offline = "atomwiki.offline_test:main"
 
 [tool.setuptools]
 packages = ["atomwiki"]

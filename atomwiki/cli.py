@@ -1044,23 +1044,27 @@ Please provide a helpful answer based on the document content. If the question c
             
             datatables_init = """
     <script>
-        // Initialize DataTables on all tables
-        $(document).ready(function() {
-            $('.section-content table').each(function() {
-                // Skip tables that are too small (less than 3 rows)
-                const rowCount = $(this).find('tbody tr').length;
-                if (rowCount >= 3) {
-                    $(this).DataTable({
-                        pageLength: 10,
-                        lengthMenu: [5, 10, 25, 50, 100],
-                        language: {
-                            search: "_INPUT_",
-                            searchPlaceholder: "Search table..."
-                        }
-                    });
-                }
+        // Initialize DataTables on all tables (with graceful fallback if CDN fails)
+        if (typeof jQuery !== 'undefined' && typeof jQuery.fn.DataTable !== 'undefined') {
+            $(document).ready(function() {
+                $('.section-content table').each(function() {
+                    // Skip tables that are too small (less than 3 rows)
+                    const rowCount = $(this).find('tbody tr').length;
+                    if (rowCount >= 3) {
+                        $(this).DataTable({
+                            pageLength: 10,
+                            lengthMenu: [5, 10, 25, 50, 100],
+                            language: {
+                                search: "_INPUT_",
+                                searchPlaceholder: "Search table..."
+                            }
+                        });
+                    }
+                });
             });
-        });
+        } else {
+            console.log('DataTables not available (CDN may have failed to load). Tables will display normally.');
+        }
     </script>"""
         
         html_template = f'''<!DOCTYPE html>

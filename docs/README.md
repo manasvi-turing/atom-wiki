@@ -52,11 +52,13 @@ Feel free to:
 Atom Wiki uses the following CDN resources for enhanced functionality:
 
 **Always Loaded:**
+
 - **Google Fonts** (Noto Sans) - Typography
 - **Material Icons** - UI icons
 - **Prism.js** - Code syntax highlighting
 
 **Optional (Config-based):**
+
 - **DataTables** - Interactive, searchable, sortable tables
   - Enable with `enable_datatables: true` in `config.yaml`
   - **Features:**
@@ -69,8 +71,54 @@ Atom Wiki uses the following CDN resources for enhanced functionality:
   - ~150KB total (cached after first load)
   - Only applied to tables with 3+ rows
   - No default DataTables CSS loaded - uses custom theme styling
+  - **Graceful fallback:** If CDN fails (no internet), tables display normally without errors
 
-**Note:** All external resources are cached by the browser after first load, making subsequent visits work offline (except on first load).
+**Note:** All external resources are cached by the browser after first load, making subsequent visits work offline (except on first load). If opened without internet on first load, tables will display as regular HTML tables.
+
+---
+
+## Testing Offline Mode
+
+Want to see how your wiki looks without internet? Use the `aw-offline` command!
+
+### What
+
+Creates a test version of your HTML file with all CDN links broken, simulating complete offline mode.
+
+### Why
+
+- **Verify graceful degradation** - See that content remains 100% readable
+- **Test offline behavior** - Confirm no errors or broken functionality
+- **Demo standalone philosophy** - Show it works without internet
+- **Compare visual differences** - See what enhancements are CDN-dependent
+
+### How
+
+```bash
+# Build your wiki
+aw ./docs -o wiki.html
+
+# Create offline test version
+aw-offline wiki.html
+
+# Compare both versions
+open wiki.html wiki_offline.html
+```
+
+**What changes:**
+
+- ⚠️ Fonts → System default (Arial, Helvetica)
+- ⚠️ Icons → Placeholder boxes
+- ⚠️ Code highlighting → Plain monospace text
+- ⚠️ DataTables → Regular HTML tables
+
+**What stays the same:**
+
+- ✅ 100% of content readable
+- ✅ All navigation works
+- ✅ Theme switching works
+- ✅ Tables display normally
+- ✅ Zero functionality lost
 
 ---
 

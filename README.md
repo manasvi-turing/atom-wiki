@@ -96,6 +96,7 @@ uv run atom-wiki ./docs -o wiki.html
 
 ### Command-Line Options
 
+**Build wiki:**
 ```bash
 atom-wiki <input_folder> [OPTIONS]
 
@@ -106,6 +107,22 @@ Options:
   --enable-chat         Enable AI chat feature
   -h, --help            Show help
 ```
+
+**Test offline mode:**
+```bash
+aw-offline <input_html> [OPTIONS]
+
+Options:
+  -o, --output FILE     Output HTML file (default: input_offline.html)
+  -h, --help            Show help
+
+# Example: Create offline test version
+aw ./docs -o wiki.html          # Build wiki
+aw-offline wiki.html            # Create offline test
+open wiki.html wiki_offline.html  # Compare both
+```
+
+This creates a test version with all CDN links broken to simulate complete offline mode. Perfect for verifying graceful degradation and testing the standalone file philosophy.
 
 ### Requirements
 
@@ -138,18 +155,21 @@ See [docs/](./docs/) for full configuration options and examples.
 ### External Dependencies (CDN)
 
 **Always Loaded:**
+
 - **Google Fonts** (Noto Sans) - Typography
 - **Material Icons** - UI icons
 - **Prism.js** - Code syntax highlighting
 
 **Optional (Config-based):**
+
 - **DataTables** - Interactive, searchable, sortable tables
   - Enable with `enable_datatables: true` in `config.yaml`
   - Features: global search, column sorting, pagination
   - ~150KB (cached after first load)
   - Only applied to tables with 3+ rows
+  - **Graceful fallback:** If CDN fails, tables display normally
 
-**Note:** All resources are cached by the browser after first load for offline use.
+**Note:** All resources are cached by the browser after first load for offline use. If opened offline before caching, content displays with regular (non-enhanced) tables.
 
 ---
 
