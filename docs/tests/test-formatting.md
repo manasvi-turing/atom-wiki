@@ -1,6 +1,6 @@
 ---
 title: List Formatting Test
-tags: [test, formatting]
+tags: [testing, formatting]
 ---
 
 # List with Bold/Italic Formatting

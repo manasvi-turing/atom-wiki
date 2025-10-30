@@ -236,6 +236,7 @@ body {
 
 .folder-item {
     margin-bottom: 5px;
+    font-size: 1.2em;
 }
 
 .folder-header {
@@ -314,12 +315,16 @@ body {
 
 .nav-link:hover {
     background-color: var(--bg-sidebar-hover, #34495e);
-    color: var(--accent-hover, #3498db);
+    color: var(--text-sidebar, #ffffff);
+    font-weight: var(--font-weight-medium, 500);
 }
 
 .nav-link.active {
     background-color: var(--bg-sidebar-hover, #34495e);
-    color: var(--accent-hover, #3498db);
+    color: var(--text-sidebar, #ffffff);
+    font-weight: var(--font-weight-semibold, 600);
+    border-left: 3px solid var(--accent-primary, #3498db);
+    padding-left: 13px; /* Adjust for border */
 }
 
 .sidebar h2 {
@@ -996,7 +1001,10 @@ body {
 }
 
 .content-section {
-    max-width: 800px;
+    /* max-width: 800px; */
+    /* background-color: green; */
+    padding: 2em 4em;
+    /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1)   ; */
 }
 
 .section-header {
@@ -1466,6 +1474,7 @@ code[class*="language-"] .token.tag {
     background: var(--bg-primary, white);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     table-layout: auto;
+    font-size: 0.9em; /* Slightly smaller font for tables */
 }
 
 .section-content .table-wrapper {
@@ -2357,15 +2366,7 @@ body.dark-theme .nav-link {
     color: #8b949e;
 }
 
-body.dark-theme .nav-link:hover {
-    background-color: #161b22;
-    color: #58a6ff;
-}
-
-body.dark-theme .nav-link.active {
-    background-color: #161b22;
-    color: #58a6ff;
-}
+/* Dark theme nav-link styles now use CSS variables - no override needed */
 
 body.dark-theme .sidebar h2 {
     color: #c9d1d9;
@@ -2519,7 +2520,7 @@ body.dark-theme .tag-popup-item .material-symbols-rounded {
 /* ===== WIKI BADGE (Top Right - Scrolls with page) ===== */
 .wiki-footer {
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
     z-index: 10;
     background: var(--bg-primary, white);

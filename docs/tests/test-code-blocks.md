@@ -1,6 +1,6 @@
 ---
 title: Code Block Test
-tags: [test, code, syntax-highlighting]
+tags: [testing, code, syntax-highlighting]
 ---
 
 # Code Block Syntax Highlighting Test

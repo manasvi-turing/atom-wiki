@@ -199,6 +199,9 @@ class MarkdownToHTMLConverter:
         md = markdown.Markdown(extensions=extensions)
         html_content = md.convert(markdown_content)
         
+        # Validate HTML balance to prevent structure corruption
+        html_content = self.validate_html_balance(html_content, current_file_index)
+        
         # Process internal links to other markdown files
         html_content = self.process_internal_links(html_content, current_file_index)
         
@@ -207,6 +210,34 @@ class MarkdownToHTMLConverter:
         
         # Wrap tables in a div for better responsive handling
         html_content = self.wrap_tables(html_content)
+        
+        return html_content
+    
+    def validate_html_balance(self, html_content, file_index):
+        """Validate and fix unbalanced HTML tags that could break the page structure"""
+        import re
+        
+        # Check for unbalanced div tags
+        open_divs = len(re.findall(r'<div[^>]*>', html_content))
+        close_divs = len(re.findall(r'</div>', html_content))
+        
+        if open_divs != close_divs:
+            file_name = self.markdown_files[file_index].name if file_index < len(self.markdown_files) else f"section-{file_index}"
+            diff = open_divs - close_divs
+            
+            print(f"⚠️  Warning: HTML imbalance in '{file_name}'")
+            print(f"   Opening <div>: {open_divs}, Closing </div>: {close_divs}")
+            print(f"   Difference: {diff}")
+            
+            # Auto-fix: Add missing closing tags or remove extra ones
+            if diff > 0:
+                # More opening tags - add closing tags
+                print(f"   → Adding {diff} closing </div> tag(s)")
+                html_content += '</div>' * diff
+            else:
+                # More closing tags - remove excess (this is trickier, so we warn)
+                print(f"   → Cannot auto-fix extra closing tags. Please check your markdown/HTML.")
+                print(f"   → This may cause layout issues for sections after '{file_name}'")
         
         return html_content
     

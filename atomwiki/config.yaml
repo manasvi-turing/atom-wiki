@@ -29,7 +29,7 @@ features:
 # - System mode auto-detects OS preference
 # - Invalid themes gracefully fall back to "default" (light/dark)
 styling:
-  default_theme: "default"  # Theme family: "default", "nord", "rosepine", "catppuccin", "solarized"
+  default_theme: "nord"  # Theme family: "default", "nord", "rosepine", "catppuccin", "solarized"
   default_mode: "system"    # Mode: "light", "dark", or "system" (auto-detect)
   custom_css_path: "static/style.css"  # Path to CSS file
 
