@@ -1,0 +1,549 @@
+# Markdown to HTML Converter Configuration
+# This file controls various build-time settings
+
+# AI Chat Feature
+# Enable/disable the AI-powered chat widget in generated HTML
+chat:
+  enabled: false  # Set to false to disable chat feature
+  default_provider: "openai"  # openai or gemini
+  default_model: "gpt-4o-mini"  # Default AI model
+
+# Output Settings
+output:
+  default_filename: "output.html"  # Default output filename if not specified
+  
+# Feature Flags
+features:
+  table_of_contents: true  # Enable TOC panel
+  navigation_sidebar: true  # Enable left sidebar
+  folder_navigation: true  # Enable hierarchical folder navigation
+  syntax_highlighting: true  # Enable code syntax highlighting
+  show_file_titles: false  # Show file names as section titles in content and TOC
+  show_frontmatter: true  # Show frontmatter metadata (tags, etc.) in the rendered output
+  
+# Styling & Theming
+# New simplified theme system:
+# - Theme families are auto-discovered from theme names ending in _light/_dark
+# - Users select a theme family (e.g., "nord") and a mode (light/dark/system)
+# - System mode auto-detects OS preference
+# - Invalid themes gracefully fall back to "default" (light/dark)
+styling:
+  default_theme: "default"  # Theme family: "default", "nord", "rosepine", "catppuccin", "solarized"
+  default_mode: "system"    # Mode: "light", "dark", or "system" (auto-detect)
+  custom_css_path: "static/style.css"  # Path to CSS file
+
+# Theme Color Schemes
+# Themes are organized by family (e.g., nord_light, nord_dark)
+# The system auto-discovers families and pairs light/dark variants
+themes:
+  light:
+    # Background colors
+    bg_primary: "#ffffff"
+    bg_secondary: "#f8f9fa"
+    bg_sidebar: "#2c3e50"
+    bg_sidebar_hover: "#34495e"
+    
+    # Text colors
+    text_primary: "#333333"
+    text_secondary: "#6c757d"
+    text_sidebar: "#ffffff"
+    text_sidebar_muted: "#bdc3c7"
+    
+    # Heading colors
+    heading_primary: "#2c3e50"
+    heading_secondary: "#34495e"
+    
+    # Link colors
+    link_normal: "#3498db"
+    link_hover: "#2980b9"
+    link_visited: "#3498db"
+    link_active: "#1976d2"
+    
+    # Internal link colors (cross-document links)
+    internal_link: "#e74c3c"
+    internal_link_hover: "#c0392b"
+    
+    # Accent colors
+    accent_primary: "#3498db"
+    accent_secondary: "#2980b9"
+    accent_hover: "#58a6ff"
+    
+    # Border colors
+    border_light: "#e9ecef"
+    border_medium: "#dee2e6"
+    border_dark: "#30363d"
+    border_accent: "#3498db"
+    
+    # Code colors
+    code_bg: "#f1f2f6"
+    code_text: "#333333"
+    code_block_bg: "#2c3e50"
+    code_block_text: "#ecf0f1"
+    
+    # Tag colors
+    tag_bg: "#ffffff"
+    tag_text: "#2c3e50"
+    tag_hover_bg: "#3498db"
+    tag_hover_text: "#ffffff"
+    
+    # Font sizes (in rem or em)
+    font_size_base: "1rem"
+    font_size_small: "0.875rem"
+    font_size_large: "1.125rem"
+    font_size_h1: "2.2em"
+    font_size_h2: "1.8em"
+    font_size_h3: "1.4em"
+    
+    # Font weights
+    font_weight_thin: "300"
+    font_weight_normal: "400"
+    font_weight_medium: "500"
+    font_weight_bold: "600"
+  
+  dark:
+    # Background colors
+    bg_primary: "#0d1117"
+    bg_secondary: "#161b22"
+    bg_sidebar: "#010409"
+    bg_sidebar_hover: "#161b22"
+    
+    # Text colors
+    text_primary: "#c9d1d9"
+    text_secondary: "#8b949e"
+    text_sidebar: "#c9d1d9"
+    text_sidebar_muted: "#8b949e"
+    
+    # Heading colors
+    heading_primary: "#c9d1d9"
+    heading_secondary: "#8b949e"
+    
+    # Link colors
+    link_normal: "#58a6ff"
+    link_hover: "#79c0ff"
+    link_visited: "#58a6ff"
+    link_active: "#1f6feb"
+    
+    # Internal link colors (cross-document links)
+    internal_link: "#f85149"
+    internal_link_hover: "#da3633"
+    
+    # Accent colors
+    accent_primary: "#58a6ff"
+    accent_secondary: "#1f6feb"
+    accent_hover: "#79c0ff"
+    
+    # Border colors
+    border_light: "#21262d"
+    border_medium: "#30363d"
+    border_dark: "#484f58"
+    border_accent: "#58a6ff"
+    
+    # Code colors
+    code_bg: "#161b22"
+    code_text: "#79c0ff"
+    code_block_bg: "#0d1117"
+    code_block_text: "#c9d1d9"
+    
+    # Tag colors
+    tag_bg: "#1c2128"
+    tag_text: "#c9d1d9"
+    tag_hover_bg: "#58a6ff"
+    tag_hover_text: "#0d1117"
+    
+    # Font sizes (in rem or em)
+    font_size_base: "1rem"
+    font_size_small: "0.875rem"
+    font_size_large: "1.125rem"
+    font_size_h1: "2.2em"
+    font_size_h2: "1.8em"
+    font_size_h3: "1.4em"
+    
+    # Font weights
+    font_weight_thin: "300"
+    font_weight_normal: "400"
+    font_weight_medium: "500"
+    font_weight_bold: "600"
+
+  nord_light:
+    # Background colors
+    bg_primary: "#eceff4"
+    bg_secondary: "#e5e9f0"
+    bg_sidebar: "#3b4252"
+    bg_sidebar_hover: "#434c5e"
+    
+    # Text colors
+    text_primary: "#2e3440"
+    text_secondary: "#4c566a"
+    text_sidebar: "#e5e9f0"
+    text_sidebar_muted: "#d8dee9"
+    
+    # Heading colors
+    heading_primary: "#3b4252"
+    heading_secondary: "#434c5e"
+    
+    # Link & Accent colors
+    link_normal: "#5e81ac"
+    link_hover: "#81a1c1"
+    link_visited: "#5e81ac"
+    link_active: "#4c566a"
+    accent_primary: "#5e81ac"
+    accent_secondary: "#81a1c1"
+    accent_hover: "#88c0d0"
+    
+    # Internal link colors
+    internal_link: "#bf616a"
+    internal_link_hover: "#d08770"
+    
+    # Border colors
+    border_light: "#d8dee9"
+    border_medium: "#e5e9f0"
+    border_dark: "#3b4252"
+    border_accent: "#5e81ac"
+    
+    # Code colors
+    code_bg: "#e5e9f0"
+    code_text: "#2e3440"
+    code_block_bg: "#3b4252"
+    code_block_text: "#d8dee9"
+    
+    # Tag colors
+    tag_bg: "#ffffff"
+    tag_text: "#4c566a"
+    tag_hover_bg: "#5e81ac"
+    tag_hover_text: "#eceff4"
+
+  nord_dark:
+    # Background colors
+    bg_primary: "#2e3440"
+    bg_secondary: "#3b4252"
+    bg_sidebar: "#242933"
+    bg_sidebar_hover: "#2e3440"
+    
+    # Text colors
+    text_primary: "#eceff4"
+    text_secondary: "#d8dee9"
+    text_sidebar: "#eceff4"
+    text_sidebar_muted: "#81a1c1"
+    
+    # Heading colors
+    heading_primary: "#eceff4"
+    heading_secondary: "#d8dee9"
+    
+    # Link & Accent colors
+    link_normal: "#88c0d0"
+    link_hover: "#8fbcbb"
+    link_visited: "#88c0d0"
+    link_active: "#81a1c1"
+    accent_primary: "#88c0d0"
+    accent_secondary: "#8fbcbb"
+    accent_hover: "#5e81ac"
+    
+    # Internal link colors
+    internal_link: "#bf616a"
+    internal_link_hover: "#d08770"
+    
+    # Border colors
+    border_light: "#3b4252"
+    border_medium: "#4c566a"
+    border_dark: "#d8dee9"
+    border_accent: "#88c0d0"
+    
+    # Code colors
+    code_bg: "#3b4252"
+    code_text: "#88c0d0"
+    code_block_bg: "#242933"
+    code_block_text: "#d8dee9"
+    
+    # Tag colors
+    tag_bg: "#3b4252"
+    tag_text: "#d8dee9"
+    tag_hover_bg: "#88c0d0"
+    tag_hover_text: "#2e3440"
+  
+  rose_pine_light:
+    # Background colors
+    bg_primary: "#faf4ed"
+    bg_secondary: "#fffaf3"
+    bg_sidebar: "#286983"
+    bg_sidebar_hover: "#56949f"
+    
+    # Text colors
+    text_primary: "#575279"
+    text_secondary: "#6e6a86"
+    text_sidebar: "#e0def4"
+    text_sidebar_muted: "#cecacd"
+    
+    # Heading colors
+    heading_primary: "#286983"
+    heading_secondary: "#56949f"
+    
+    # Link & Accent colors
+    link_normal: "#286983"
+    link_hover: "#56949f"
+    link_visited: "#286983"
+    link_active: "#1f4d63"
+    accent_primary: "#286983"
+    accent_secondary: "#56949f"
+    accent_hover: "#ea9d34"
+    
+    # Internal link colors
+    internal_link: "#d7827e"
+    internal_link_hover: "#b4637a"
+    
+    # Border colors
+    border_light: "#f2e9e1"
+    border_medium: "#dfdad9"
+    border_dark: "#286983"
+    border_accent: "#286983"
+    
+    # Code colors
+    code_bg: "#fffaf3"
+    code_text: "#575279"
+    code_block_bg: "#286983"
+    code_block_text: "#e0def4"
+    
+    # Tag colors
+    tag_bg: "#ffffff"
+    tag_text: "#575279"
+    tag_hover_bg: "#286983"
+    tag_hover_text: "#faf4ed"
+
+  rose_pine_dark:
+    # Background colors
+    bg_primary: "#191724"
+    bg_secondary: "#1f1d2e"
+    bg_sidebar: "#21202e"
+    bg_sidebar_hover: "#403d52"
+    
+    # Text colors
+    text_primary: "#e0def4"
+    text_secondary: "#908caa"
+    text_sidebar: "#e0def4"
+    text_sidebar_muted: "#6e6a86"
+    
+    # Heading colors
+    heading_primary: "#e0def4"
+    heading_secondary: "#908caa"
+    
+    # Link & Accent colors
+    link_normal: "#9ccfd8"
+    link_hover: "#ebbcba"
+    link_visited: "#9ccfd8"
+    link_active: "#31748f"
+    accent_primary: "#9ccfd8"
+    accent_secondary: "#ebbcba"
+    accent_hover: "#f6c177"
+    
+    # Internal link colors
+    internal_link: "#eb6f92"
+    internal_link_hover: "#c4a7e7"
+    
+    # Border colors
+    border_light: "#403d52"
+    border_medium: "#6e6a86"
+    border_dark: "#e0def4"
+    border_accent: "#9ccfd8"
+    
+    # Code colors
+    code_bg: "#1f1d2e"
+    code_text: "#9ccfd8"
+    code_block_bg: "#21202e"
+    code_block_text: "#e0def4"
+    
+    # Tag colors
+    tag_bg: "#26233a"
+    tag_text: "#e0def4"
+    tag_hover_bg: "#9ccfd8"
+    tag_hover_text: "#191724"
+
+  catppuccin_light:
+    # Background colors
+    bg_primary: "#eff1f5"
+    bg_secondary: "#e6e9ef"
+    bg_sidebar: "#5c5f77"
+    bg_sidebar_hover: "#6c6f85"
+    
+    # Text colors
+    text_primary: "#4c4f69"
+    text_secondary: "#6c6f85"
+    text_sidebar: "#eff1f5"
+    text_sidebar_muted: "#9ca0b0"
+    
+    # Heading colors
+    heading_primary: "#4c4f69"
+    heading_secondary: "#5c5f77"
+    
+    # Link & Accent colors
+    link_normal: "#1e66f5"
+    link_hover: "#7287fd"
+    link_visited: "#1e66f5"
+    link_active: "#1840c4"
+    accent_primary: "#1e66f5"
+    accent_secondary: "#7287fd"
+    accent_hover: "#ea76cb"
+    
+    # Internal link colors
+    internal_link: "#d20f39"
+    internal_link_hover: "#e64553"
+    
+    # Border colors
+    border_light: "#dce0e8"
+    border_medium: "#ccd0da"
+    border_dark: "#5c5f77"
+    border_accent: "#1e66f5"
+    
+    # Code colors
+    code_bg: "#e6e9ef"
+    code_text: "#4c4f69"
+    code_block_bg: "#5c5f77"
+    code_block_text: "#eff1f5"
+    
+    # Tag colors
+    tag_bg: "#ffffff"
+    tag_text: "#4c4f69"
+    tag_hover_bg: "#1e66f5"
+    tag_hover_text: "#eff1f5"
+
+  catppuccin_dark:
+    # Background colors
+    bg_primary: "#1e1e2e"
+    bg_secondary: "#181825"
+    bg_sidebar: "#11111b"
+    bg_sidebar_hover: "#181825"
+    
+    # Text colors
+    text_primary: "#cdd6f4"
+    text_secondary: "#a6adc8"
+    text_sidebar: "#cdd6f4"
+    text_sidebar_muted: "#7f849c"
+    
+    # Heading colors
+    heading_primary: "#cdd6f4"
+    heading_secondary: "#a6adc8"
+    
+    # Link & Accent colors
+    link_normal: "#89b4fa"
+    link_hover: "#b4befe"
+    link_visited: "#89b4fa"
+    link_active: "#74c7ec"
+    accent_primary: "#89b4fa"
+    accent_secondary: "#b4befe"
+    accent_hover: "#f5c2e7"
+    
+    # Internal link colors
+    internal_link: "#f38ba8"
+    internal_link_hover: "#eba0ac"
+    
+    # Border colors
+    border_light: "#313244"
+    border_medium: "#45475a"
+    border_dark: "#cdd6f4"
+    border_accent: "#89b4fa"
+    
+    # Code colors
+    code_bg: "#181825"
+    code_text: "#89b4fa"
+    code_block_bg: "#11111b"
+    code_block_text: "#cdd6f4"
+    
+    # Tag colors
+    tag_bg: "#313244"
+    tag_text: "#cdd6f4"
+    tag_hover_bg: "#89b4fa"
+    tag_hover_text: "#1e1e2e"
+
+  solarized_light:
+    # Background colors
+    bg_primary: "#fdf6e3"
+    bg_secondary: "#eee8d5"
+    bg_sidebar: "#073642"
+    bg_sidebar_hover: "#002b36"
+    
+    # Text colors
+    text_primary: "#657b83"
+    text_secondary: "#839496"
+    text_sidebar: "#fdf6e3"
+    text_sidebar_muted: "#eee8d5"
+    
+    # Heading colors
+    heading_primary: "#586e75"
+    heading_secondary: "#073642"
+    
+    # Link & Accent colors
+    link_normal: "#268bd2"
+    link_hover: "#2aa198"
+    link_visited: "#268bd2"
+    link_active: "#cb4b16"
+    accent_primary: "#268bd2"
+    accent_secondary: "#2aa198"
+    accent_hover: "#6c71c4"
+    
+    # Internal link colors
+    internal_link: "#dc322f"
+    internal_link_hover: "#d33682"
+    
+    # Border colors
+    border_light: "#eee8d5"
+    border_medium: "#93a1a1"
+    border_dark: "#073642"
+    border_accent: "#268bd2"
+    
+    # Code colors
+    code_bg: "#eee8d5"
+    code_text: "#657b83"
+    code_block_bg: "#073642"
+    code_block_text: "#93a1a1"
+    
+    # Tag colors
+    tag_bg: "#ffffff"
+    tag_text: "#586e75"
+    tag_hover_bg: "#268bd2"
+    tag_hover_text: "#fdf6e3"
+
+  solarized_dark:
+    # Background colors
+    bg_primary: "#002b36"
+    bg_secondary: "#073642"
+    bg_sidebar: "#001e26"
+    bg_sidebar_hover: "#073642"
+    
+    # Text colors
+    text_primary: "#839496"
+    text_secondary: "#657b83"
+    text_sidebar: "#839496"
+    text_sidebar_muted: "#586e75"
+    
+    # Heading colors
+    heading_primary: "#93a1a1"
+    heading_secondary: "#839496"
+    
+    # Link & Accent colors
+    link_normal: "#268bd2"
+    link_hover: "#2aa198"
+    link_visited: "#268bd2"
+    link_active: "#cb4b16"
+    accent_primary: "#268bd2"
+    accent_secondary: "#2aa198"
+    accent_hover: "#6c71c4"
+    
+    # Internal link colors
+    internal_link: "#dc322f"
+    internal_link_hover: "#d33682"
+    
+    # Border colors
+    border_light: "#073642"
+    border_medium: "#586e75"
+    border_dark: "#93a1a1"
+    border_accent: "#268bd2"
+    
+    # Code colors
+    code_bg: "#073642"
+    code_text: "#268bd2"
+    code_block_bg: "#001e26"
+    code_block_text: "#839496"
+    
+    # Tag colors
+    tag_bg: "#073642"
+    tag_text: "#839496"
+    tag_hover_bg: "#268bd2"
+    tag_hover_text: "#002b36"

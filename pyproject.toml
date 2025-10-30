@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atom-wiki"
+version = "0.2.0"
+description = "Convert markdown files to a single HTML webpage with navigation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "markdown>=3.9",
+    "pyyaml>=6.0.3",
+]
+
+[project.scripts]
+atom-wiki = "atomwiki:main"
+atomwiki = "atomwiki:main"
+
+[tool.setuptools]
+packages = ["atomwiki"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+atomwiki = ["static/*.css", "config.yaml"]

@@ -1,0 +1,2 @@
+include atomwiki/config.yaml
+recursive-include atomwiki/static *.css
