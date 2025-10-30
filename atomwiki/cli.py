@@ -34,6 +34,9 @@ class MarkdownToHTMLConverter:
         
         # Set show_frontmatter from config
         self.show_frontmatter = self.config.get('features', {}).get('show_frontmatter', True)
+        
+        # Set enable_datatables from config
+        self.enable_datatables = self.config.get('features', {}).get('enable_datatables', False)
     
     def load_config(self):
         """Load configuration from YAML file"""
@@ -1025,6 +1028,41 @@ Please provide a helpful answer based on the document content. If the question c
         # Get theme config for JavaScript
         theme_config_json = self.get_theme_config_json()
         
+        # DataTables CSS and JS sections
+        datatables_css = ""
+        datatables_js = ""
+        datatables_init = ""
+        
+        if self.enable_datatables:
+            datatables_css = """
+    <!-- DataTables CSS - Disabled, using custom theme styling -->"""
+            
+            datatables_js = """
+    <!-- DataTables JS -->
+    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js'></script>"""
+            
+            datatables_init = """
+    <script>
+        // Initialize DataTables on all tables
+        $(document).ready(function() {
+            $('.section-content table').each(function() {
+                // Skip tables that are too small (less than 3 rows)
+                const rowCount = $(this).find('tbody tr').length;
+                if (rowCount >= 3) {
+                    $(this).DataTable({
+                        pageLength: 10,
+                        lengthMenu: [5, 10, 25, 50, 100],
+                        language: {
+                            search: "_INPUT_",
+                            searchPlaceholder: "Search table..."
+                        }
+                    });
+                }
+            });
+        });
+    </script>"""
+        
         html_template = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1043,6 +1081,7 @@ Please provide a helpful answer based on the document content. If the question c
     <!-- Prism.js for Syntax Highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    {datatables_css}
     
     <style>
         /* Theme CSS Variables */
@@ -1946,7 +1985,11 @@ Please provide a helpful answer based on the document content. If the question c
                 Prism.highlightAll();
             }}, 50);
         }};
-        
+    </script>
+    {datatables_js}
+    {datatables_init}
+    
+    <script>
         // Process task lists - convert markdown syntax to styled checkboxes
         function processTaskLists() {{
             document.querySelectorAll('.section-content li').forEach(li => {{

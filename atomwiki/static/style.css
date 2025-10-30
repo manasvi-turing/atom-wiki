@@ -2562,3 +2562,385 @@ body.dark-theme .wiki-footer:hover {
     }
 }
 
+/* ===== DATATABLES STYLING ===== */
+/* Custom DataTables styling (no default CSS loaded) */
+.dataTables_wrapper {
+    font-family: var(--font-primary, 'Noto Sans', sans-serif);
+    color: var(--text-primary, #2c3e50);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    clear: both;
+}
+
+.dataTables_wrapper::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* DataTables buttons */
+.dt-buttons {
+    margin-bottom: 10px;
+}
+
+.dt-button {
+    background: var(--accent-primary, #3498db) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.dt-button:hover {
+    background: var(--accent-hover, #2980b9) !important;
+    transform: translateY(-1px);
+}
+
+/* Column filter inputs in footer */
+table.dataTable tfoot th {
+    background: var(--bg-secondary, #f6f8fa) !important;
+    border-top: 1px solid var(--border-medium, #dee2e6) !important;
+    padding: 8px !important;
+}
+
+table.dataTable tfoot input {
+    font-size: 12px !important;
+    border: 1px solid var(--border-medium, #dee2e6) !important;
+    border-radius: 3px !important;
+    background: var(--bg-primary, white) !important;
+    color: var(--text-primary, #2c3e50) !important;
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_paginate {
+    color: var(--text-secondary, #666) !important;
+    font-size: var(--font-size-small, 13px);
+}
+
+/* Layout for top controls */
+.dataTables_wrapper .dataTables_length {
+    float: left;
+    margin-bottom: 15px;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    float: right;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.dataTables_wrapper .dataTables_filter label {
+    font-weight: normal;
+}
+
+/* Layout for bottom controls */
+.dataTables_wrapper .dataTables_info {
+    float: left;
+    padding-top: 12px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    float: right;
+    text-align: right;
+    padding-top: 8px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid var(--border-medium, #dee2e6) !important;
+    border-radius: 4px;
+    padding: 6px 12px;
+    background: var(--bg-primary, white) !important;
+    color: var(--text-primary, #2c3e50) !important;
+    transition: border-color 0.2s ease;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+    outline: none;
+    border-color: var(--accent-primary, #3498db) !important;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid var(--border-medium, #dee2e6) !important;
+    border-radius: 4px;
+    padding: 4px 8px;
+    background: var(--bg-primary, white) !important;
+    color: var(--text-primary, #2c3e50) !important;
+}
+
+table.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border-medium, #dee2e6);
+    margin: 0;
+}
+
+table.dataTable thead th,
+table.dataTable.stripe thead th,
+table.dataTable.hover thead th,
+table.dataTable.display thead th,
+.dataTables_wrapper table.dataTable thead th {
+    background: var(--accent-primary, #3498db) !important;
+    color: var(--text-inverse, white) !important;
+    border-bottom: 2px solid var(--border-medium, #dee2e6) !important;
+    font-weight: var(--font-weight-semibold, 600) !important;
+    text-transform: uppercase !important;
+    font-size: 0.85em !important;
+    letter-spacing: 0.5px !important;
+    padding: 12px !important;
+    text-align: left !important;
+    cursor: pointer !important;
+    position: relative !important;
+}
+
+table.dataTable thead th.sorting,
+table.dataTable thead th.sorting_asc,
+table.dataTable thead th.sorting_desc {
+    cursor: pointer;
+    padding-right: 30px;
+}
+
+table.dataTable thead th.sorting::after,
+table.dataTable thead th.sorting_asc::after,
+table.dataTable thead th.sorting_desc::after {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: var(--text-inverse, white);
+}
+
+table.dataTable thead th.sorting::after {
+    content: "↕";
+    opacity: 0.5;
+}
+
+table.dataTable thead th.sorting_asc::after {
+    content: "↑";
+    opacity: 1;
+}
+
+table.dataTable thead th.sorting_desc::after {
+    content: "↓";
+    opacity: 1;
+}
+
+table.dataTable tbody td {
+    border: 1px solid var(--border-light, #e9ecef) !important;
+    padding: 12px !important;
+    color: var(--text-primary, #2c3e50) !important;
+}
+
+/* Base row colors */
+table.dataTable tbody tr,
+table.dataTable.stripe tbody tr.odd,
+table.dataTable.display tbody tr.odd {
+    background: var(--bg-primary, white) !important;
+}
+
+table.dataTable tbody tr:nth-child(even),
+table.dataTable.stripe tbody tr.even,
+table.dataTable.display tbody tr.even {
+    background: var(--bg-secondary, #f6f8fa) !important;
+}
+
+/* Hover states - must be after base colors */
+table.dataTable tbody tr:hover,
+table.dataTable.stripe tbody tr:hover,
+table.dataTable.hover tbody tr:hover,
+table.dataTable.display tbody tr:hover,
+.dataTables_wrapper table.dataTable tbody tr:hover {
+    background: var(--accent-hover, #e3f2fd) !important;
+    transition: background-color 0.2s ease;
+}
+
+table.dataTable tbody tr:hover td,
+table.dataTable.stripe tbody tr:hover td,
+table.dataTable.hover tbody tr:hover td,
+table.dataTable.display tbody tr:hover td {
+    background-color: transparent !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-left: 4px;
+    border: 1px solid var(--border-light, #e1e4e8);
+    border-radius: 4px;
+    background: var(--bg-primary, white);
+    color: var(--accent-primary, #3498db);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: var(--accent-primary, #3498db);
+    color: white;
+    border-color: var(--accent-primary, #3498db);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--accent-primary, #3498db);
+    color: white;
+    border-color: var(--accent-primary, #3498db);
+    font-weight: 600;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+    background: var(--bg-primary, white);
+    color: var(--accent-primary, #3498db);
+    border-color: var(--border-light, #e1e4e8);
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    margin-top: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate .ellipsis {
+    padding: 6px 12px;
+    margin-left: 4px;
+    color: var(--text-secondary, #666);
+}
+
+/* Dark theme DataTables */
+body.dark-theme .dataTables_wrapper {
+    color: var(--text-primary, #c9d1d9);
+}
+
+body.dark-theme .dataTables_wrapper .dataTables_length,
+body.dark-theme .dataTables_wrapper .dataTables_filter,
+body.dark-theme .dataTables_wrapper .dataTables_info {
+    color: var(--text-secondary, #8b949e);
+}
+
+body.dark-theme .dt-button {
+    background: var(--accent-primary, #58a6ff) !important;
+}
+
+body.dark-theme .dt-button:hover {
+    background: var(--accent-hover, #409eff) !important;
+}
+
+body.dark-theme table.dataTable tfoot th {
+    background: var(--bg-secondary, #161b22) !important;
+    border-top-color: var(--border-medium, #30363d) !important;
+}
+
+body.dark-theme table.dataTable tfoot input {
+    background: var(--bg-primary, #0d1117) !important;
+    border-color: var(--border-medium, #30363d) !important;
+    color: var(--text-primary, #c9d1d9) !important;
+}
+
+body.dark-theme .dataTables_wrapper .dataTables_length,
+body.dark-theme .dataTables_wrapper .dataTables_filter,
+body.dark-theme .dataTables_wrapper .dataTables_info,
+body.dark-theme .dataTables_wrapper .dataTables_paginate {
+    color: var(--text-secondary, #8b949e) !important;
+}
+
+body.dark-theme .dataTables_wrapper .dataTables_filter input {
+    background: var(--bg-secondary, #161b22);
+    border-color: var(--border-medium, #30363d);
+    color: var(--text-primary, #c9d1d9);
+}
+
+body.dark-theme .dataTables_wrapper .dataTables_filter input:focus {
+    border-color: var(--accent-primary, #58a6ff);
+}
+
+body.dark-theme .dataTables_wrapper .dataTables_length select {
+    background: var(--bg-secondary, #161b22);
+    border-color: var(--border-medium, #30363d);
+    color: var(--text-primary, #c9d1d9);
+}
+
+body.dark-theme table.dataTable {
+    border-color: var(--border-medium, #30363d) !important;
+}
+
+body.dark-theme table.dataTable thead th,
+body.dark-theme table.dataTable.stripe thead th,
+body.dark-theme table.dataTable.hover thead th,
+body.dark-theme table.dataTable.display thead th,
+body.dark-theme .dataTables_wrapper table.dataTable thead th {
+    background: var(--accent-primary, #58a6ff) !important;
+    color: var(--text-inverse, #0d1117) !important;
+    border-bottom-color: var(--border-medium, #30363d) !important;
+    font-weight: var(--font-weight-semibold, 600) !important;
+    text-transform: uppercase !important;
+    font-size: 0.85em !important;
+    letter-spacing: 0.5px !important;
+}
+
+body.dark-theme table.dataTable tbody td {
+    border-color: var(--border-dark, #30363d) !important;
+    color: var(--text-primary, #c9d1d9) !important;
+}
+
+/* Dark theme base row colors */
+body.dark-theme table.dataTable tbody tr,
+body.dark-theme table.dataTable.stripe tbody tr.odd,
+body.dark-theme table.dataTable.display tbody tr.odd {
+    background: var(--bg-primary, #0d1117) !important;
+}
+
+body.dark-theme table.dataTable tbody tr:nth-child(even),
+body.dark-theme table.dataTable.stripe tbody tr.even,
+body.dark-theme table.dataTable.display tbody tr.even {
+    background: var(--bg-secondary, #161b22) !important;
+}
+
+/* Dark theme hover states - must be after base colors */
+body.dark-theme table.dataTable tbody tr:hover,
+body.dark-theme table.dataTable.stripe tbody tr:hover,
+body.dark-theme table.dataTable.hover tbody tr:hover,
+body.dark-theme table.dataTable.display tbody tr:hover,
+body.dark-theme .dataTables_wrapper table.dataTable tbody tr:hover {
+    background: var(--accent-hover, #1a3a52) !important;
+    transition: background-color 0.2s ease;
+}
+
+body.dark-theme table.dataTable tbody tr:hover td,
+body.dark-theme table.dataTable.stripe tbody tr:hover td,
+body.dark-theme table.dataTable.hover tbody tr:hover td,
+body.dark-theme table.dataTable.display tbody tr:hover td {
+    background-color: transparent !important;
+}
+
+body.dark-theme .dataTables_wrapper .dataTables_paginate .paginate_button {
+    background: var(--bg-secondary, #161b22);
+    border-color: var(--border-medium, #30363d);
+    color: var(--accent-primary, #58a6ff);
+}
+
+body.dark-theme .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: var(--accent-primary, #58a6ff);
+    color: var(--bg-primary, #0d1117);
+    border-color: var(--accent-primary, #58a6ff);
+}
+
+body.dark-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--accent-primary, #58a6ff);
+    color: var(--bg-primary, #0d1117);
+    border-color: var(--accent-primary, #58a6ff);
+}
+
+body.dark-theme .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+    background: var(--bg-secondary, #161b22);
+    color: var(--accent-primary, #58a6ff);
+    border-color: var(--border-medium, #30363d);
+}
+

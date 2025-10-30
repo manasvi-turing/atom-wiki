@@ -20,6 +20,7 @@ features:
   syntax_highlighting: true  # Enable code syntax highlighting
   show_file_titles: false  # Show file names as section titles in content and TOC
   show_frontmatter: true  # Show frontmatter metadata (tags, etc.) in the rendered output
+  enable_datatables: true  # Enable DataTables for interactive, searchable, sortable tables (requires CDN)
   
 # Styling & Theming
 # New simplified theme system:

@@ -47,5 +47,32 @@ Feel free to:
 
 ---
 
+## External Dependencies (CDN)
+
+Atom Wiki uses the following CDN resources for enhanced functionality:
+
+**Always Loaded:**
+- **Google Fonts** (Noto Sans) - Typography
+- **Material Icons** - UI icons
+- **Prism.js** - Code syntax highlighting
+
+**Optional (Config-based):**
+- **DataTables** - Interactive, searchable, sortable tables
+  - Enable with `enable_datatables: true` in `config.yaml`
+  - **Features:**
+    - Global search across all columns
+    - Sort by clicking column headers
+    - Pagination with customizable page size (5, 10, 25, 50, 100 rows)
+    - Fully styled to match your theme (light/dark modes)
+    - Headers and hover effects consistent with normal tables
+  - Includes jQuery + DataTables core
+  - ~150KB total (cached after first load)
+  - Only applied to tables with 3+ rows
+  - No default DataTables CSS loaded - uses custom theme styling
+
+**Note:** All external resources are cached by the browser after first load, making subsequent visits work offline (except on first load).
+
+---
+
 **Generated Wiki:** See `demo.html` in parent folder!
 

@@ -66,7 +66,7 @@ cp wiki.html /Volumes/USB/
 ✅ **No database** to migrate, no server to maintain  
 ✅ **Yours forever** - just a file you own
 
-**Current caveat:** Uses CDNs for fonts/icons (cached after first load). Working on fully embedded mode soon!
+**Current caveat:** Uses CDNs for fonts/icons/syntax highlighting (cached after first load). Optional DataTables for interactive tables. Working on fully embedded mode soon!
 
 ## Want More Details?
 
@@ -134,6 +134,22 @@ chat:
 ```
 
 See [docs/](./docs/) for full configuration options and examples.
+
+### External Dependencies (CDN)
+
+**Always Loaded:**
+- **Google Fonts** (Noto Sans) - Typography
+- **Material Icons** - UI icons
+- **Prism.js** - Code syntax highlighting
+
+**Optional (Config-based):**
+- **DataTables** - Interactive, searchable, sortable tables
+  - Enable with `enable_datatables: true` in `config.yaml`
+  - Features: global search, column sorting, pagination
+  - ~150KB (cached after first load)
+  - Only applied to tables with 3+ rows
+
+**Note:** All resources are cached by the browser after first load for offline use.
 
 ---
 
