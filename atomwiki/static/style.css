@@ -255,7 +255,8 @@ body {
 .folder-icon {
     margin-right: 8px;
     font-size: 20px;
-    color: var(--accent-primary, #3498db);
+    color: var(--text-sidebar, #ffffff);
+    opacity: 0.9;
 }
 
 .folder-name {
@@ -323,8 +324,8 @@ body {
     background-color: var(--bg-sidebar-hover, #34495e);
     color: var(--text-sidebar, #ffffff);
     font-weight: var(--font-weight-semibold, 600);
-    border-left: 3px solid var(--accent-primary, #3498db);
-    padding-left: 13px; /* Adjust for border */
+    border-left: 4px solid var(--text-sidebar, #ffffff);
+    padding-left: 12px; /* Adjust for border */
 }
 
 .sidebar h2 {
@@ -342,7 +343,8 @@ body {
 
 .sidebar h2 .material-symbols-rounded {
     font-size: 28px;
-    color: var(--accent-primary, #3498db);
+    color: var(--text-sidebar, #ffffff);
+    opacity: 0.95;
 }
 
 .sidebar ul {

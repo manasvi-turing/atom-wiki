@@ -298,7 +298,7 @@ themes:
     link_hover: "#56949f"
     link_visited: "#286983"
     link_active: "#1f4d63"
-    accent_primary: "#286983"
+    accent_primary: "#ea9d34"  # Changed to gold for better contrast on sidebar
     accent_secondary: "#56949f"
     accent_hover: "#f2e9de"
     
@@ -400,7 +400,7 @@ themes:
     link_hover: "#7287fd"
     link_visited: "#1e66f5"
     link_active: "#1840c4"
-    accent_primary: "#1e66f5"
+    accent_primary: "#8839ef"  # Changed to purple/mauve for better contrast on sidebar
     accent_secondary: "#7287fd"
     accent_hover: "#dce0e8"
     
