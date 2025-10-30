@@ -340,12 +340,14 @@ window.open('output.html', '_blank');
 ## What to Look For
 
 **With CDN (Prism.js loaded):**
+
 - ✅ Colorful syntax highlighting
 - ✅ Different colors for keywords, strings, comments
 - ✅ Line numbers (if enabled)
 - ✅ Language-specific styling
 
 **Without CDN (Offline):**
+
 - ⚠️ Plain monospace text
 - ⚠️ No color highlighting
 - ⚠️ Still readable and properly formatted
