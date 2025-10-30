@@ -2487,3 +2487,78 @@ body.dark-theme .tag-popup-item .material-symbols-rounded {
 
 /* TOC toggle adapts to theme via CSS variables */
 
+/* ===== WIKI BADGE (Top Right) ===== */
+.wiki-footer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: var(--bg-primary, white);
+    border: 1px solid var(--border-light, #e1e4e8);
+    border-radius: 8px;
+    padding: 10px 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    color: var(--text-secondary, #666);
+    transition: all 0.2s ease;
+}
+
+.wiki-footer:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.wiki-footer-content {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.wiki-footer-text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.wiki-footer a {
+    color: var(--accent-primary, #3498db);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium, 500);
+    transition: color 0.2s ease;
+}
+
+.wiki-footer a:hover {
+    color: var(--accent-hover, #2980b9);
+}
+
+.wiki-footer-emoji {
+    display: inline-block;
+    font-size: 14px;
+}
+
+/* Dark theme badge */
+body.dark-theme .wiki-footer {
+    background: var(--bg-secondary, #161b22);
+    border-color: var(--border-medium, #30363d);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .wiki-footer:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile - make badge smaller and less intrusive */
+@media (max-width: 768px) {
+    .wiki-footer {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+    
+    .wiki-footer-emoji {
+        font-size: 12px;
+    }
+}
+

@@ -2053,6 +2053,14 @@ Please provide a helpful answer based on the document content. If the question c
             }});
         }});
     </script>
+    
+    <div class="wiki-footer">
+        <div class="wiki-footer-content">
+            <div class="wiki-footer-text">
+                Built with <span class="wiki-footer-emoji">❤️</span> & <span class="wiki-footer-emoji">☕</span> using <a href="https://github.com/manasvi-turing/atom-wiki" target="_blank">Atom Wiki</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>'''
         
