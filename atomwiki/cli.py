@@ -299,9 +299,9 @@ class MarkdownToHTMLConverter:
                 nav_items.append(f'''
                 <li class="folder-item">
                     <div class="folder-header" onclick="toggleFolder('{folder_id}')">
-                        <span class="material-symbols-rounded folder-icon">folder</span>
+                        <span class="material-symbols-rounded folder-icon" data-fallback="📁">folder</span>
                         <span class="folder-name">{clean_folder_name}</span>
-                        <span class="material-symbols-rounded folder-toggle">chevron_right</span>
+                        <span class="material-symbols-rounded folder-toggle" data-fallback="▶">chevron_right</span>
                     </div>
                     <ul class="folder-contents" id="{folder_id}" style="display: none;">
                 ''')
@@ -554,15 +554,15 @@ class MarkdownToHTMLConverter:
                             <label>Mode</label>
                             <div class="mode-buttons">
                                 <button class="mode-button" data-mode="light" onclick="setMode('light')">
-                                    <span class="material-symbols-rounded">light_mode</span>
+                                    <span class="material-symbols-rounded" data-fallback="☀️">light_mode</span>
                                     <span>Light</span>
                                 </button>
                                 <button class="mode-button" data-mode="dark" onclick="setMode('dark')">
-                                    <span class="material-symbols-rounded">dark_mode</span>
+                                    <span class="material-symbols-rounded" data-fallback="🌙">dark_mode</span>
                                     <span>Dark</span>
                                 </button>
                                 <button class="mode-button" data-mode="system" onclick="setMode('system')">
-                                    <span class="material-symbols-rounded">computer</span>
+                                    <span class="material-symbols-rounded" data-fallback="💻">computer</span>
                                     <span>System</span>
                                 </button>
                             </div>
@@ -577,15 +577,15 @@ class MarkdownToHTMLConverter:
         
         return '''
         <button class="chat-toggle" id="chat-toggle" onclick="toggleChat()">
-            <span class="material-symbols-rounded">chat</span>
+            <span class="material-symbols-rounded" data-fallback="💬">chat</span>
         </button>
         
         <div class="chat-widget" id="chat-widget">
             <div class="chat-header">
-                <h4><span class="material-symbols-rounded">chat</span> Document Chat</h4>
+                <h4><span class="material-symbols-rounded" data-fallback="💬">chat</span> Document Chat</h4>
                 <div class="chat-header-actions">
                     <button class="chat-settings-toggle" onclick="toggleChatSettings()" id="settings-toggle" title="Settings">
-                        <span class="material-symbols-rounded">settings</span>
+                        <span class="material-symbols-rounded" data-fallback="⚙️">settings</span>
                     </button>
                     <button class="chat-close" onclick="toggleChat()" title="Close">✕</button>
                 </div>
@@ -1132,17 +1132,17 @@ Please provide a helpful answer based on the document content. If the question c
     <div class="container">
         <nav class="sidebar" id="sidebar">
             <button class="sidebar-toggle" id="sidebar-toggle" onclick="toggleSidebar()" title="Collapse Sidebar">
-                <span class="material-symbols-rounded">chevron_left</span>
+                <span class="material-symbols-rounded" data-fallback="◀">chevron_left</span>
             </button>
             <div class="sidebar-nav">
-                <h2><span class="material-symbols-rounded">menu_book</span> {folder_name}</h2>
+                <h2><span class="material-symbols-rounded" data-fallback="📖">menu_book</span> {folder_name}</h2>
                 <ul>
                     {navigation}
                 </ul>
             </div>
             <div class="sidebar-footer">
                 <button class="settings-button" onclick="openSettings()" title="Settings">
-                    <span class="material-symbols-rounded settings-icon">settings</span>
+                    <span class="material-symbols-rounded settings-icon" data-fallback="⚙️">settings</span>
                     <span class="settings-text">Settings</span>
                 </button>
             </div>
@@ -1150,19 +1150,19 @@ Please provide a helpful answer based on the document content. If the question c
         </nav>
         
         <button class="sidebar-open-button" id="sidebar-open-button" onclick="toggleSidebar()" title="Open Sidebar" style="display: none;">
-            <span class="material-symbols-rounded">chevron_right</span>
+            <span class="material-symbols-rounded" data-fallback="▶">chevron_right</span>
         </button>
         
         <!-- Settings Modal -->
         <div class="settings-modal" id="settings-modal">
             <div class="settings-content">
                 <div class="settings-header">
-                    <h3><span class="material-symbols-rounded">settings</span> Settings</h3>
+                    <h3><span class="material-symbols-rounded" data-fallback="⚙️">settings</span> Settings</h3>
                     <button class="settings-close" onclick="closeSettings()">✕</button>
                 </div>
                 <div class="settings-body">
                     <div class="setting-group">
-                        <label class="setting-label"><span class="material-symbols-rounded">palette</span> Theme</label>
+                        <label class="setting-label"><span class="material-symbols-rounded" data-fallback="🎨">palette</span> Theme</label>
                         <div class="theme-selector">{self.generate_theme_selector()}
                         </div>
                     </div>
@@ -1182,7 +1182,7 @@ Please provide a helpful answer based on the document content. If the question c
         </aside>
         
         <button class="toc-toggle" id="toc-toggle" onclick="toggleTOC()">
-            <span class="material-symbols-rounded">close</span>
+            <span class="material-symbols-rounded" data-fallback="✕">close</span>
         </button>
         
         {self.get_chat_html()}
@@ -1472,11 +1472,11 @@ Please provide a helpful answer based on the document content. If the question c
             if (tocPanel.classList.contains('hidden')) {{
                 // Show TOC
                 tocPanel.classList.remove('hidden');
-                toggleButton.innerHTML = '<span class="material-symbols-rounded">close</span>';
+                toggleButton.innerHTML = '<span class="material-symbols-rounded" data-fallback="✕">close</span>';
             }} else {{
                 // Hide TOC
                 tocPanel.classList.add('hidden');
-                toggleButton.innerHTML = '<span class="material-symbols-rounded">toc</span>';
+                toggleButton.innerHTML = '<span class="material-symbols-rounded" data-fallback="📑">toc</span>';
             }}
         }}
         
@@ -2051,7 +2051,7 @@ Please provide a helpful answer based on the document content. If the question c
                     // Build popup content
                     let popupHTML = `
                         <div class="tag-popup-header">
-                            <span class="material-symbols-rounded">sell</span>
+                            <span class="material-symbols-rounded" data-fallback="🏷️">sell</span>
                             Files with tag "${{tagName}}" (${{files.length}})
                         </div>
                         <div class="tag-popup-list">
@@ -2060,7 +2060,7 @@ Please provide a helpful answer based on the document content. If the question c
                     files.forEach(f => {{
                         popupHTML += `
                             <div class="tag-popup-item" onclick="showSection(${{f.index}}); document.getElementById('tag-popup').style.display='none';">
-                                <span class="material-symbols-rounded">description</span>
+                                <span class="material-symbols-rounded" data-fallback="📄">description</span>
                                 ${{f.name}}
                             </div>
                         `;
@@ -2098,6 +2098,36 @@ Please provide a helpful answer based on the document content. If the question c
                     this.style.display = 'none';
                 }}, 200);
             }});
+        }});
+        
+        // Material Icons emoji fallback - replace icon text with emoji when font fails to load
+        document.addEventListener('DOMContentLoaded', function() {{
+            // Check if Material Icons font loaded after a delay
+            setTimeout(function() {{
+                // Try to detect if Material Icons is loaded by checking a test element
+                const testIcon = document.createElement('span');
+                testIcon.className = 'material-symbols-rounded';
+                testIcon.textContent = 'settings';
+                testIcon.style.position = 'absolute';
+                testIcon.style.left = '-9999px';
+                testIcon.style.fontSize = '24px';
+                document.body.appendChild(testIcon);
+                
+                // If the element width is very small, the font probably didn't load (showing text)
+                const width = testIcon.offsetWidth;
+                document.body.removeChild(testIcon);
+                
+                // Material Icons renders as ~24px icon, plain text would be much wider
+                if (width > 30) {{
+                    // Font didn't load, use emoji fallbacks
+                    document.querySelectorAll('.material-symbols-rounded[data-fallback]').forEach(icon => {{
+                        const emoji = icon.getAttribute('data-fallback');
+                        if (emoji) {{
+                            icon.textContent = emoji;
+                        }}
+                    }});
+                }}
+            }}, 500); // Wait 500ms for font to load
         }});
     </script>
     

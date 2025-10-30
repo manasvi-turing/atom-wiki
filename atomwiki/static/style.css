@@ -2487,12 +2487,41 @@ body.dark-theme .tag-popup-item .material-symbols-rounded {
 
 /* TOC toggle adapts to theme via CSS variables */
 
-/* ===== WIKI BADGE (Top Right) ===== */
+/* ===== MATERIAL ICONS WITH EMOJI FALLBACK ===== */
+/* Material Icons work via font ligatures - text like "settings" becomes an icon */
+.material-symbols-rounded {
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    font-size: inherit;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+
+/* Emoji fallback: Only show when Material Icons font fails to load (offline) */
+.material-symbols-rounded[data-fallback]::after {
+    content: attr(data-fallback);
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
+    display: none; /* Hidden by default - shown via JS when font fails */
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* ===== WIKI BADGE (Top Right - Scrolls with page) ===== */
 .wiki-footer {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 9999;
+    z-index: 10;
     background: var(--bg-primary, white);
     border: 1px solid var(--border-light, #e1e4e8);
     border-radius: 8px;

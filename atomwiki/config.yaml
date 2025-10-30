@@ -43,12 +43,15 @@ themes:
     bg_secondary: "#f8f9fa"
     bg_sidebar: "#2c3e50"
     bg_sidebar_hover: "#34495e"
+    bg_hover: "#f0f0f0"
     
     # Text colors
     text_primary: "#333333"
     text_secondary: "#6c757d"
     text_sidebar: "#ffffff"
     text_sidebar_muted: "#bdc3c7"
+    text_inverse: "#ffffff"
+    text_on_accent: "#ffffff"
     
     # Heading colors
     heading_primary: "#2c3e50"
@@ -67,7 +70,7 @@ themes:
     # Accent colors
     accent_primary: "#3498db"
     accent_secondary: "#2980b9"
-    accent_hover: "#58a6ff"
+    accent_hover: "#e3f2fd"
     
     # Border colors
     border_light: "#e9ecef"
@@ -107,12 +110,15 @@ themes:
     bg_secondary: "#161b22"
     bg_sidebar: "#010409"
     bg_sidebar_hover: "#161b22"
+    bg_hover: "#161b22"
     
     # Text colors
     text_primary: "#c9d1d9"
     text_secondary: "#8b949e"
     text_sidebar: "#c9d1d9"
     text_sidebar_muted: "#8b949e"
+    text_inverse: "#0d1117"
+    text_on_accent: "#0d1117"
     
     # Heading colors
     heading_primary: "#c9d1d9"
@@ -131,7 +137,7 @@ themes:
     # Accent colors
     accent_primary: "#58a6ff"
     accent_secondary: "#1f6feb"
-    accent_hover: "#79c0ff"
+    accent_hover: "#21262d"
     
     # Border colors
     border_light: "#21262d"
@@ -171,12 +177,15 @@ themes:
     bg_secondary: "#e5e9f0"
     bg_sidebar: "#3b4252"
     bg_sidebar_hover: "#434c5e"
+    bg_hover: "#d8dee9"
     
     # Text colors
     text_primary: "#2e3440"
     text_secondary: "#4c566a"
     text_sidebar: "#e5e9f0"
     text_sidebar_muted: "#d8dee9"
+    text_inverse: "#eceff4"
+    text_on_accent: "#eceff4"
     
     # Heading colors
     heading_primary: "#3b4252"
@@ -219,12 +228,15 @@ themes:
     bg_secondary: "#3b4252"
     bg_sidebar: "#242933"
     bg_sidebar_hover: "#2e3440"
+    bg_hover: "#3b4252"
     
     # Text colors
     text_primary: "#eceff4"
     text_secondary: "#d8dee9"
     text_sidebar: "#eceff4"
     text_sidebar_muted: "#81a1c1"
+    text_inverse: "#2e3440"
+    text_on_accent: "#2e3440"
     
     # Heading colors
     heading_primary: "#eceff4"
@@ -267,12 +279,15 @@ themes:
     bg_secondary: "#fffaf3"
     bg_sidebar: "#286983"
     bg_sidebar_hover: "#56949f"
+    bg_hover: "#f2e9de"
     
     # Text colors
     text_primary: "#575279"
     text_secondary: "#6e6a86"
     text_sidebar: "#e0def4"
     text_sidebar_muted: "#cecacd"
+    text_inverse: "#faf4ed"
+    text_on_accent: "#faf4ed"
     
     # Heading colors
     heading_primary: "#286983"
@@ -285,7 +300,7 @@ themes:
     link_active: "#1f4d63"
     accent_primary: "#286983"
     accent_secondary: "#56949f"
-    accent_hover: "#ea9d34"
+    accent_hover: "#f2e9de"
     
     # Internal link colors
     internal_link: "#d7827e"
@@ -315,12 +330,15 @@ themes:
     bg_secondary: "#1f1d2e"
     bg_sidebar: "#21202e"
     bg_sidebar_hover: "#403d52"
+    bg_hover: "#26233a"
     
     # Text colors
     text_primary: "#e0def4"
     text_secondary: "#908caa"
     text_sidebar: "#e0def4"
     text_sidebar_muted: "#6e6a86"
+    text_inverse: "#191724"
+    text_on_accent: "#191724"
     
     # Heading colors
     heading_primary: "#e0def4"
@@ -333,7 +351,7 @@ themes:
     link_active: "#31748f"
     accent_primary: "#9ccfd8"
     accent_secondary: "#ebbcba"
-    accent_hover: "#f6c177"
+    accent_hover: "#26233a"
     
     # Internal link colors
     internal_link: "#eb6f92"
@@ -363,12 +381,15 @@ themes:
     bg_secondary: "#e6e9ef"
     bg_sidebar: "#5c5f77"
     bg_sidebar_hover: "#6c6f85"
+    bg_hover: "#dce0e8"
     
     # Text colors
     text_primary: "#4c4f69"
     text_secondary: "#6c6f85"
     text_sidebar: "#eff1f5"
     text_sidebar_muted: "#9ca0b0"
+    text_inverse: "#eff1f5"
+    text_on_accent: "#eff1f5"
     
     # Heading colors
     heading_primary: "#4c4f69"
@@ -381,7 +402,7 @@ themes:
     link_active: "#1840c4"
     accent_primary: "#1e66f5"
     accent_secondary: "#7287fd"
-    accent_hover: "#ea76cb"
+    accent_hover: "#dce0e8"
     
     # Internal link colors
     internal_link: "#d20f39"
@@ -411,12 +432,15 @@ themes:
     bg_secondary: "#181825"
     bg_sidebar: "#11111b"
     bg_sidebar_hover: "#181825"
+    bg_hover: "#313244"
     
     # Text colors
     text_primary: "#cdd6f4"
     text_secondary: "#a6adc8"
     text_sidebar: "#cdd6f4"
     text_sidebar_muted: "#7f849c"
+    text_inverse: "#1e1e2e"
+    text_on_accent: "#1e1e2e"
     
     # Heading colors
     heading_primary: "#cdd6f4"
@@ -429,7 +453,7 @@ themes:
     link_active: "#74c7ec"
     accent_primary: "#89b4fa"
     accent_secondary: "#b4befe"
-    accent_hover: "#f5c2e7"
+    accent_hover: "#313244"
     
     # Internal link colors
     internal_link: "#f38ba8"
@@ -459,12 +483,15 @@ themes:
     bg_secondary: "#eee8d5"
     bg_sidebar: "#073642"
     bg_sidebar_hover: "#002b36"
+    bg_hover: "#eee8d5"
     
     # Text colors
     text_primary: "#657b83"
     text_secondary: "#839496"
     text_sidebar: "#fdf6e3"
     text_sidebar_muted: "#eee8d5"
+    text_inverse: "#fdf6e3"
+    text_on_accent: "#fdf6e3"
     
     # Heading colors
     heading_primary: "#586e75"
@@ -477,7 +504,7 @@ themes:
     link_active: "#cb4b16"
     accent_primary: "#268bd2"
     accent_secondary: "#2aa198"
-    accent_hover: "#6c71c4"
+    accent_hover: "#eee8d5"
     
     # Internal link colors
     internal_link: "#dc322f"
@@ -507,12 +534,15 @@ themes:
     bg_secondary: "#073642"
     bg_sidebar: "#001e26"
     bg_sidebar_hover: "#073642"
+    bg_hover: "#073642"
     
     # Text colors
     text_primary: "#839496"
     text_secondary: "#657b83"
     text_sidebar: "#839496"
     text_sidebar_muted: "#586e75"
+    text_inverse: "#002b36"
+    text_on_accent: "#002b36"
     
     # Heading colors
     heading_primary: "#93a1a1"
@@ -525,7 +555,7 @@ themes:
     link_active: "#cb4b16"
     accent_primary: "#268bd2"
     accent_secondary: "#2aa198"
-    accent_hover: "#6c71c4"
+    accent_hover: "#073642"
     
     # Internal link colors
     internal_link: "#dc322f"
