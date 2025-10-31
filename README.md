@@ -4,6 +4,7 @@
   <strong>TLDR:</strong> Tired of organizing digital furniture instead of writing? <code style="background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 0.9em;">atom-wiki ./my-notes -o wiki.html</code> turns your markdown folder into one beautiful HTML file. Email it, USB it, server it - it's just a file.
 </div>
 
+
 <div align="center">
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWN2YXowYjEwb3pxcG9nMDV2aTYwcGFrcGt6bHRhMzFiYzZxeWxodyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1O2BRZcDgIfDsKMTbG/giphy.gif" width="600" alt="Coding Magic"/>
 </div>
