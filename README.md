@@ -41,6 +41,8 @@ uvx --from "git+https://github.com/manasvi-turing/atom-wiki.git" atom-wiki ./doc
 
 One command. One beautiful HTML file. Infinite possibilities.
 
+> Ofcourse you need python and uv!! search google and install; no time for that, no no.
+
 ## What You Get
 
 ✅ One self-contained HTML file (no "where are my images?")  
