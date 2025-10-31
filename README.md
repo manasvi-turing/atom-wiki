@@ -1,7 +1,7 @@
-# 📚 Atom Wiki: The One-File Wonder
+# Atom Wiki
 
 <div align="center" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 1.1em; line-height: 1.6; color: #555; padding: 20px; max-width: 800px; margin: 20px auto;">
-  <strong>TLDR:</strong> Tired of organizing digital furniture instead of writing? <code style="background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 0.9em;">atom-wiki ./my-notes -o wiki.html</code> turns your markdown folder into one beautiful HTML file. Email it, USB it, server it - it's just a file.
+  <strong>TLDR:</strong> Tired of organizing digital furniture instead of writing? <code style="background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 0.9em;">atom-wiki ./my-notes -o wiki.html</code> turns your markdown folder into one beautiful HTML file. Email it, USB it, whatsapp it, server it - it's just a file.
 </div>
 
 
@@ -23,15 +23,15 @@ All amazing tools, just... not quite right for someone who mainly wants to think
 ## The Great Trade-Off
 
 **What I happily abandoned:**
-- ❌ Central server drama
-- ❌ Auto-sync anxiety  
-- ❌ Real-time collaboration FOMO
+- Central server drama
+- Auto-sync anxiety  
+- Real-time collaboration FOMO
 
 **What I gained:**
-- ✅ Actual writing time
-- ✅ True ownership (my files, my rules)
-- ✅ Zero subscription guilt
-- ✅ The joy of "it just works"
+- Actual writing time
+- True ownership (my files, my rules)
+- Zero subscription guilt
+- The joy of "it just works"
 
 ## The Magic Spell
 
@@ -60,9 +60,9 @@ One command. One beautiful HTML file. Infinite possibilities.
 
 ## Want More Details?
 
-📖 **[Full Documentation](./docs/)** - Features, use cases, workflows, FAQ  
-🔧 **[Technical Guide](./docs/README.md)** - Installation, configuration, commands, roadmap  
-🎯 **[Live Demo](./docs.html)** - See the actual generated wiki for this project (download and open in browser)
+**[Full Documentation](./docs/)** - Features, use cases, workflows, FAQ  
+**[Technical Guide](./docs/README.md)** - Installation, configuration, commands, roadmap  
+**[Live Demo](./docs.html)** - See the actual generated wiki for this project (download and open in browser)
 
 ---
 <div align="center" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 1.1em; line-height: 1.6; color: #555; padding: 20px; max-width: 800px; margin: 0 auto;">
