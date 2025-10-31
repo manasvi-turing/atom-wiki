@@ -2,7 +2,7 @@
 
 > **Turn your markdown folder into one HTML file. Share it on a USB stick. Email it. Put it on a server. It's just a file.**
 
-## My Journey (The Short Version)
+## My Journey
 
 I kept trying different tools:
 - **Notion** - Loved it, but spent more time organizing pages than writing

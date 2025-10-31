@@ -135,11 +135,11 @@ body {
 .sidebar-toggle {
     position: absolute;
     top: 20px;
-    right: 10px;
+    right: 2.3rem;
     background: rgba(255, 255, 255, 0.1);
     border: none;
     color: var(--text-sidebar, white);
-    padding: 8px;
+    /* padding: 8px; */
     border-radius: 6px;
     cursor: pointer;
     display: flex;
@@ -147,8 +147,8 @@ body {
     justify-content: center;
     transition: all 0.2s ease;
     z-index: 10;
-    width: 36px;
-    height: 36px;
+    width: 2rem;
+    height: 2rem;
 }
 
 .sidebar-toggle:hover {
@@ -236,7 +236,7 @@ body {
 
 .folder-item {
     margin-bottom: 5px;
-    font-size: 1.2em;
+    /* font-size: 1rem; */
 }
 
 .folder-header {
@@ -1221,7 +1221,7 @@ body {
 
 /* Ensure proper padding when line numbers are present */
 .section-content pre.line-numbers {
-    padding-left: 3.5rem !important;
+    padding-left: 2rem !important;
     position: relative;
 }
 
@@ -2496,7 +2496,7 @@ body.dark-theme .tag-popup-item .material-symbols-rounded {
     font-family: 'Material Symbols Rounded';
     font-weight: normal;
     font-style: normal;
-    font-size: inherit;
+    font-size: 1.5rem;
     line-height: 1;
     letter-spacing: normal;
     text-transform: none;
@@ -2975,4 +2975,3 @@ body.dark-theme .dataTables_wrapper .dataTables_paginate .paginate_button.disabl
     color: var(--accent-primary, #58a6ff);
     border-color: var(--border-medium, #30363d);
 }
-
