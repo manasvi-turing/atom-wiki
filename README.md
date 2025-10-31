@@ -1,220 +1,66 @@
-# 📚 Atom Wiki
+# 📚 Atom Wiki: The One-File Wonder
 
-> **Turn your markdown folder into one HTML file. Share it on a USB stick. Email it. Put it on a server. It's just a file.**
+> **TLDR:** Tired of organizing digital furniture instead of writing? `atom-wiki ./my-notes -o wiki.html` turns your markdown folder into one beautiful HTML file. Email it, USB it, server it - it's just a file.
 
-## My Journey
+## My Tool Hopping Saga 🤦‍♂️
 
-I kept trying different tools:
-- **Notion** - Loved it, but spent more time organizing pages than writing
-- **Obsidian** - Beautiful graphs, but I got lost connecting notes instead of creating them
-- **MS Word** - Familiar, but I didn't want to waste time on fonts and spacing
-- **Confluence** - Great for teams, but subscription fee felt steep for my notes
-- **Hugo/Jekyll** - Powerful, but I just wanted to write, not configure Ruby/Node
-- **Google Docs** - Simple, but sharing meant endless permission requests
-- **ReadTheDocs** - Professional, but seemed overkill for personal docs
-- **Gitbook** - Beautiful, but another subscription I didn't need
+I went through more note-taking tools than a digital nomad goes through coffee shops, and here's the realization that hit me: each tool was brilliant at what it did, but maybe a bit too brilliant for my needs.
 
-I realized: I wasn't building knowledge. I was building *furniture for knowledge that never moved in.*
+Notion is fantastic for team wikis and databases, but I found myself spending more time designing pretty pages than actually writing content. Obsidian's graph view is pure magic for visual thinkers, but I kept getting lost connecting notes that didn't exist yet. MS Word remains the undisputed champion for formal documents, but I was constantly fighting formatting demons instead of capturing thoughts.
 
-**What I gave up (and why I'm okay with it):**
-- ❌ Central server? Don't need it. My knowledge lives in files I can backup however I want.
-- ❌ Auto-sync between devices? I'll manage. Git, Dropbox, or a USB stick work fine.
-- ❌ Real-time collaboration? Rarely needed. I focus on thinking deeply, then share when ready.
+Confluence? Absolute powerhouse for enterprise teams - just felt like using a battleship to cross a pond for my personal notes. Hugo and Jekyll are incredible for serious web publishing, but configuration paralysis set in fast when I just wanted to write. Google Docs makes collaboration seamless, though sharing felt like hosting a party where everyone needs ID checks. And Gitbook creates stunning documentation - it's just that another subscription started quietly eating my wallet.
+
+All amazing tools, just... not quite right for someone who mainly wants to think, write, and own their words.
+
+## The Great Trade-Off 🤔
+
+**What I happily abandoned:**
+- ❌ Central server drama
+- ❌ Auto-sync anxiety  
+- ❌ Real-time collaboration FOMO
 
 **What I gained:**
-- ✅ FOSS philosophy - Open source, inspect the code, modify it, own it completely.
-- ✅ No vendor lock-in - My files are mine. Forever. No export, no migration needed.
-- ✅ Simple workflow - Write markdown anywhere (even WhatsApp), polish later, build when ready.
+- ✅ Actual writing time
+- ✅ True ownership (my files, my rules)
+- ✅ Zero subscription guilt
+- ✅ The joy of "it just works"
 
-The ideas matter more than the sync. The ownership matters more than the convenience.
-
-So I built this:
-
-```bash
-atom-wiki ./my-docs -o wiki.html
-```
-
-**One command. One HTML file. Done.**
-
-Now I write in Markdown (in VimWiki, like a civilized person), run one command, and get a beautiful wiki I can:
-- Drop on a USB stick
-- Email to anyone
-- Put on any server
-- Open in 2045 and it still works
-
-No subscriptions. No "please upgrade" popups. No vendor lock-in. Just files.
-
-## Quick Start
+## The Magic Spell ✨
 
 ```bash
-# Install
-uvx --from "git+https://github.com/manasvi-turing/atom-wiki.git" atom-wiki
-
-# Run
-atom-wiki ./your-docs -o wiki.html
-
-# Share (literally any way you want)
-cp wiki.html /Volumes/USB/
+uvx --from "git+https://github.com/manasvi-turing/atom-wiki.git" atom-wiki ./docs -o wiki.html
 ```
 
-## What You Get
+One command. One beautiful HTML file. Infinite possibilities.
 
-✅ **One self-contained HTML file** with all your docs  
-✅ **Beautiful navigation** (hierarchical sidebar + floating TOC)  
-✅ **Dark/light/system themes** that actually look good  
-✅ **Works everywhere** (desktop, tablet, phone)  
-✅ **No database** to migrate, no server to maintain  
-✅ **Yours forever** - just a file you own
+## What You Get 🎁
 
-**Current caveat:** Uses CDNs for fonts/icons/syntax highlighting (cached after first load). Optional DataTables for interactive tables. Working on fully embedded mode soon!
+✅ One self-contained HTML file (no "where are my images?")  
+✅ Navigation that doesn't require a map  
+✅ Themes that don't hurt your eyes  
+✅ Works on your grandma's computer from 2008  
+✅ No database to appease, no server to feed  
+✅ Files you'll actually own in 2045
+
+> *Current quirk:* Uses CDN magic for fonts/icons (cached after first load). Working on full hermit mode soon!
+
+**Perfect for:** Personal knowledge bases, project documentation, recipe collections, or that novel you've been "meaning to write"
+
+**Not for:** Real-time collaboration, NASA mission control, or impressing your VC friends
+
+---
 
 ## Want More Details?
 
-📖 **[Full Documentation](./docs/index.md)** - Features, use cases, workflows, FAQ  
-🔧 **[Technical Details](#technical-details)** - Installation, configuration, API  
+📖 **[Full Documentation](./docs/)** - Features, use cases, workflows, FAQ  
+🔧 **[Technical Guide](./docs/README.md)** - Installation, configuration, commands, roadmap
 
 ---
 
-## Technical Details
-
-### Installation Options
-
-```bash
-# Option 1: Run with uvx (no install needed)
-uvx --from "git+https://github.com/manasvi-turing/atom-wiki.git" atom-wiki ./docs -o wiki.html
-
-# Option 2: Install globally
-uv tool install "git+https://github.com/manasvi-turing/atom-wiki.git"
-atom-wiki ./docs -o wiki.html
-
-# Option 3: Local development
-git clone https://github.com/manasvi-turing/atom-wiki.git
-cd atom-wiki
-uv sync
-uv run atom-wiki ./docs -o wiki.html
-```
-
-### Command-Line Options
-
-**Build wiki:**
-```bash
-atom-wiki <input_folder> [OPTIONS]
-
-Options:
-  -o, --output FILE     Output HTML file (default: output.html)
-  --config FILE         Custom config YAML file
-  --no-chat             Disable AI chat feature
-  --enable-chat         Enable AI chat feature
-  -h, --help            Show help
-```
-
-**Test offline mode:**
-```bash
-aw-offline <input_html> [OPTIONS]
-
-Options:
-  -o, --output FILE     Output HTML file (default: input_offline.html)
-  -h, --help            Show help
-
-# Example: Create offline test version
-aw ./docs -o wiki.html          # Build wiki
-aw-offline wiki.html            # Create offline test
-open wiki.html wiki_offline.html  # Compare both
-```
-
-This creates a test version with all CDN links broken to simulate complete offline mode. Perfect for verifying graceful degradation and testing the standalone file philosophy.
-
-### Requirements
-
-- **Python 3.11+**
-- **uv package manager** - [Install uv](https://docs.astral.sh/uv/)
-- Dependencies: `markdown>=3.9`, `pyyaml>=6.0.3`
-
-### Configuration
-
-Create a `config.yaml`:
-
-```yaml
-# Output Settings
-output:
-  default_filename: "output.html"
-  table_of_contents: true
-
-# Styling & Theming
-styling:
-  default_theme: "system"  # light, dark, or system
-
-# AI Chat (optional)
-chat:
-  enabled: false
-  default_provider: "openai"
-```
-
-See [docs/](./docs/) for full configuration options and examples.
-
-### External Dependencies (CDN)
-
-**Always Loaded:**
-
-- **Google Fonts** (Noto Sans) - Typography
-- **Material Icons** - UI icons
-- **Prism.js** - Code syntax highlighting
-
-**Optional (Config-based):**
-
-- **DataTables** - Interactive, searchable, sortable tables
-  - Enable with `enable_datatables: true` in `config.yaml`
-  - Features: global search, column sorting, pagination
-  - ~150KB (cached after first load)
-  - Only applied to tables with 3+ rows
-  - **Graceful fallback:** If CDN fails, tables display normally
-
-**Note:** All resources are cached by the browser after first load for offline use. If opened offline before caching, content displays with regular (non-enhanced) tables.
+Made with ❤️ and healthy dose of "why is this so complicated elsewhere?"
 
 ---
 
-## Roadmap
-
-### 🚀 Coming Soon
-- **Fully Embedded Mode** - Zero external dependencies, works 100% offline
-- **Mermaid Diagrams** - Auto-detected, conditionally embedded
-- **Math Rendering** - KaTeX support
-- **Custom Themes** - Easy theme creation
-
-### 🔮 Future Ideas
-- Excalidraw support
-- Export to PDF
-- Better mobile navigation
-- Plugin system
+**License:** MIT | **Version:** 0.2.0 | **Cringe Level:** Moderately proud
 
 ---
-
-## Contributing
-
-Contributions welcome! 
-
-1. Fork the repo
-2. Create a feature branch
-3. Make your changes
-4. Test with `uv run atom-wiki ./docs -o test.html`
-5. Submit a PR
-
----
-
-## License
-
-MIT License - Use it, modify it, share it. It's yours.
-
----
-
-## Links
-
-- **GitHub:** https://github.com/manasvi-turing/atom-wiki
-- **Issues:** https://github.com/manasvi-turing/atom-wiki/issues
-- **Full Docs:** [./docs/](./docs/)
-
----
-
-**Current Version:** 0.2.0
-
-Made with ❤️ and a healthy disrespect for over-engineered solutions.
