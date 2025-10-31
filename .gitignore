@@ -5,6 +5,7 @@ __pycache__/
 *$py.class
 *.so
 pending.md
+issues.md
 /future_development
 
 # Distribution / packaging
@@ -54,6 +55,7 @@ wiki_output.html
 lolo.html
 lolololo.html
 output.html
+!docs.html
 
 # UV lock file (optional - some prefer to commit this)
 # uv.lock
