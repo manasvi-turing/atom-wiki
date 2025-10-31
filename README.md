@@ -8,7 +8,7 @@ I kept trying different tools:
 - **Notion** - Loved it, but spent more time organizing pages than writing
 - **Obsidian** - Beautiful graphs, but I got lost connecting notes instead of creating them
 - **MS Word** - Familiar, but I didn't want to waste time on fonts and spacing
-- **Confluence** - Great for teams, but $10/user/month felt steep for my notes
+- **Confluence** - Great for teams, but subscription fee felt steep for my notes
 - **Hugo/Jekyll** - Powerful, but I just wanted to write, not configure Ruby/Node
 - **Google Docs** - Simple, but sharing meant endless permission requests
 - **ReadTheDocs** - Professional, but seemed overkill for personal docs
